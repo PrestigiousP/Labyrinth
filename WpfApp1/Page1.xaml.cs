@@ -55,7 +55,7 @@ namespace WpfApp1
             colDef = new ColumnDefinition();
             rowDef = new RowDefinition();
             textBox = new TextBox();
-            DataTable dt = new DataTable();
+            // DataTable dt = new DataTable();
 
             myGrid.ColumnDefinitions.Add(colDef);
             myGrid.RowDefinitions.Add(rowDef);
