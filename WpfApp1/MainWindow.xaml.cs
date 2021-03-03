@@ -22,7 +22,7 @@ namespace WpfApp1
     {
         private int hauteur;
         private int largeur;
-        private int poids;
+        private int poidsMax;
 
         public MainWindow()
         {
@@ -41,12 +41,12 @@ namespace WpfApp1
 
         private void textBox2_TextChanged(object sender, TextChangedEventArgs e)
         {
-            poids = int.Parse(textBox2.Text);
+            poidsMax = int.Parse(textBox2.Text);
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            Content = new Page1(hauteur, largeur, poids);
+            Content = new Page1(hauteur, largeur, poidsMax);
         }
     }
 }

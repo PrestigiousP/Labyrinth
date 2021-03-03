@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfApp1.Models
+namespace WpfApp1.ViewModels
 {
-    class Branches
+    class Branch
     {
-        
     }
 }

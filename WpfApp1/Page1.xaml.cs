@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Diagnostics;
-using System.Diagnostics;
+using WpfApp1.ViewModels;
 
 namespace WpfApp1
 {
@@ -24,30 +24,37 @@ namespace WpfApp1
     {
         private int hauteur;
         private int largeur;
-        private int poids;
+        private int poidsMax;
         ColumnDefinition colDef;
         RowDefinition rowDef;
         TextBox textBox;
-        DataTable dt;
 
-        public Page1(int hauteur, int largeur, int poids)
+        public Page1(int hauteur, int largeur, int poidsMax)
         {
             InitializeComponent();
 
             this.hauteur = hauteur;
             this.largeur = largeur;
-            this.poids = poids;
+            this.poidsMax = poidsMax;
 
             CreateGrid();
         }
 
         public void CreateGrid()
         {
+            Labyrinthe lab = new Labyrinthe(hauteur, largeur);
+            lab.GenerateLabyrinth(poidsMax);
+            // labyrinth.ItemsSource = data.getData();
+            labGrid.ItemsSource = lab.GetSolution();
             //for(int i = 0; i < hauteur; i++)
             //{
 
             //}
-            Trace.WriteLine("heyy");
+            // int[] test = lab.GetAretes();
+            for (int i = 0; i < lab.GetSolution().Length; i++)
+            {
+                Trace.WriteLine(lab.GetSolution()[i]);
+            }
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
