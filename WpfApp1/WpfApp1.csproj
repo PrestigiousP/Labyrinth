@@ -55,8 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Models\Branches.cs" />
-    <Compile Include="ViewModels\Data.cs" />
+    <Compile Include="ViewModels\booleanLab.cs" />
+    <Compile Include="ViewModels\Branch.cs" />
+    <Compile Include="ViewModels\Labyrinth.cs" />
+    <Compile Include="ViewModels\Node.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

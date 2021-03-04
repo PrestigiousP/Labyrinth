@@ -9,10 +9,33 @@
       Title="Page1"
       Background="GhostWhite">
 
-    <Grid x:Name="myGrid">
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="47,360,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <DataGrid x:Name="labGrid" HeadersVisibility="None">
+    <Page.Resources>
+        <Style TargetType="DataGridCell">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+
+        <DataTemplate x:Key="DataTemplate_Level2">
+            <!--<Button Content="{Binding}" Height="40" Width="50" Margin="4,4,4,4"/>-->
+            <DataGridCell Content="{Binding}" Height="40" Width="50"></DataGridCell>
+        </DataTemplate>
+
+        <DataTemplate x:Key="DataTemplate_Level1">
+            <ItemsControl ItemsSource="{Binding}" ItemTemplate="{DynamicResource DataTemplate_Level2}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
             
-        </DataGrid>
+        </DataTemplate>
+
+    </Page.Resources>
+
+    <Grid x:Name="myGrid">
+        <ItemsControl x:Name="lst" ItemTemplate="{DynamicResource DataTemplate_Level1}"/>
+        <!--<DataGrid x:Name="labGrid" HeadersVisibility="None">
+            
+        </DataGrid>-->
     </Grid>
 </Page>

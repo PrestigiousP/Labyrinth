@@ -42,45 +42,27 @@ namespace WpfApp1
 
         public void CreateGrid()
         {
-            Labyrinthe lab = new Labyrinthe(hauteur, largeur);
-            lab.GenerateLabyrinth(poidsMax);
-            // labyrinth.ItemsSource = data.getData();
-            labGrid.ItemsSource = lab.GetSolution();
-            //for(int i = 0; i < hauteur; i++)
-            //{
+            Labyrinth lab = new Labyrinth(hauteur, largeur, poidsMax);
 
-            //}
-            // int[] test = lab.GetAretes();
-            for (int i = 0; i < lab.GetSolution().Length; i++)
-            {
-                Trace.WriteLine(lab.GetSolution()[i]);
-            }
-        }
+            //List<List<bool>> lsts = new List<List<bool>>();
+            //List<bool> lst1 = new List<bool>();
+            //List<bool> lst2 = new List<bool>();
+            //lst1.Add(true);
+            //lst1.Add(false);
+            //lst1.Add(true);
+            //lst1.Add(true);
+            //lst1.Add(true);
 
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            colDef = new ColumnDefinition();
-            rowDef = new RowDefinition();
-            textBox = new TextBox();
-            // DataTable dt = new DataTable();
+            //lst2.Add(true);
+            //lst2.Add(false);
+            //lst2.Add(true);
+            //lst2.Add(true);
+            //lst2.Add(true);
 
-            myGrid.ColumnDefinitions.Add(colDef);
-            myGrid.RowDefinitions.Add(rowDef);
-            myGrid.ShowGridLines = true;
-            Trace.WriteLine(myGrid.ColumnDefinitions.ElementAt(0));
-            Trace.WriteLine(colDef);
+            //lsts.Add(lst1);
+            //lsts.Add(lst2);
 
-            //textBox = new TextBox();
-            //textBox.Text = "Author Name";
-            //textBox.FontSize = 14;
-            //textBox.FontWeight = FontWeights.Bold;
-            //textBox.Foreground = new SolidColorBrush(Colors.Green);
-            //textBox.VerticalAlignment = VerticalAlignment.Top;
-            //Grid.SetRow(textBox, 1);
-            //Grid.SetColumn(textBox, 2);
-            //Trace.WriteLine(textBox);
-            //Trace.WriteLine("aaaaaaa");
-
+            lst.ItemsSource = lab.Prim();
         }
     }
 }
