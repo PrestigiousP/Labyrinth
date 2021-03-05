@@ -10,20 +10,33 @@
       Background="GhostWhite">
 
     <Page.Resources>
-        <Style TargetType="DataGridCell">
-            <Setter Property="HorizontalAlignment" Value="Center" />
+        <Style x:Key="test" TargetType="DataGridCell">
+            <Style.Triggers>
+                <Trigger Property="Content" Value="true">
+                    <Setter Property="Background" Value="Aqua"/>
+                    <Setter Property="Visibility" Value="Hidden"/>
+                </Trigger>
+            </Style.Triggers>
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="VerticalAlignment" Value="Stretch" />
+            <Setter Property="Background" Value="Fuchsia"/>
+            <Setter Property="Margin" Value="0,0,0,0"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Height" Value="100"/>
         </Style>
 
+        
         <DataTemplate x:Key="DataTemplate_Level2">
-            <!--<Button Content="{Binding}" Height="40" Width="50" Margin="4,4,4,4"/>-->
-            <DataGridCell Content="{Binding}" Height="40" Width="50"></DataGridCell>
+            <DataGridCell Content="{Binding}" Style="{StaticResource test}"></DataGridCell>
         </DataTemplate>
 
         <DataTemplate x:Key="DataTemplate_Level1">
+
             <ItemsControl ItemsSource="{Binding}" ItemTemplate="{DynamicResource DataTemplate_Level2}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <StackPanel Orientation="Horizontal"/>
+                        <!--<StackPanel Orientation="Horizontal" />-->
+                        <UniformGrid Rows="1" />
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
             </ItemsControl>
@@ -32,7 +45,7 @@
 
     </Page.Resources>
 
-    <Grid x:Name="myGrid">
+    <Grid x:Name="myGrid" >
         <ItemsControl x:Name="lst" ItemTemplate="{DynamicResource DataTemplate_Level1}"/>
         <!--<DataGrid x:Name="labGrid" HeadersVisibility="None">
             

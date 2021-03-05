@@ -61,8 +61,10 @@ namespace WpfApp1
 
             //lsts.Add(lst1);
             //lsts.Add(lst2);
-
             lst.ItemsSource = lab.Prim();
+            Style style = FindResource("lst") as Style;
+            Trace.WriteLine(style);
+
         }
     }
 }
