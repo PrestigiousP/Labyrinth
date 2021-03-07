@@ -1,7 +1,6 @@
 C:\Users\Phili\source\repos\WpfApp1\WpfApp1\bin\Debug\WpfApp1.exe.config
 C:\Users\Phili\source\repos\WpfApp1\WpfApp1\bin\Debug\WpfApp1.exe
 C:\Users\Phili\source\repos\WpfApp1\WpfApp1\bin\Debug\WpfApp1.pdb
-C:\Users\Phili\source\repos\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csprojAssemblyReference.cache
 C:\Users\Phili\source\repos\WpfApp1\WpfApp1\obj\Debug\MainWindow.g.cs
 C:\Users\Phili\source\repos\WpfApp1\WpfApp1\obj\Debug\Page1.g.cs
 C:\Users\Phili\source\repos\WpfApp1\WpfApp1\obj\Debug\App.g.cs
@@ -15,3 +14,4 @@ C:\Users\Phili\source\repos\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.GenerateRes
 C:\Users\Phili\source\repos\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.CoreCompileInputs.cache
 C:\Users\Phili\source\repos\WpfApp1\WpfApp1\obj\Debug\WpfApp1.exe
 C:\Users\Phili\source\repos\WpfApp1\WpfApp1\obj\Debug\WpfApp1.pdb
+C:\Users\Phili\source\repos\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csprojAssemblyReference.cache

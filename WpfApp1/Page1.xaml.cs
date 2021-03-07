@@ -25,9 +25,7 @@ namespace WpfApp1
         private int hauteur;
         private int largeur;
         private int poidsMax;
-        ColumnDefinition colDef;
-        RowDefinition rowDef;
-        TextBox textBox;
+        public List<List<bool>> ResultList { get; set; }
 
         public Page1(int hauteur, int largeur, int poidsMax)
         {
@@ -37,34 +35,9 @@ namespace WpfApp1
             this.largeur = largeur;
             this.poidsMax = poidsMax;
 
-            CreateGrid();
-        }
-
-        public void CreateGrid()
-        {
-            Labyrinth lab = new Labyrinth(hauteur, largeur, poidsMax);
-
-            //List<List<bool>> lsts = new List<List<bool>>();
-            //List<bool> lst1 = new List<bool>();
-            //List<bool> lst2 = new List<bool>();
-            //lst1.Add(true);
-            //lst1.Add(false);
-            //lst1.Add(true);
-            //lst1.Add(true);
-            //lst1.Add(true);
-
-            //lst2.Add(true);
-            //lst2.Add(false);
-            //lst2.Add(true);
-            //lst2.Add(true);
-            //lst2.Add(true);
-
-            //lsts.Add(lst1);
-            //lsts.Add(lst2);
-            lst.ItemsSource = lab.Prim();
-            Style style = FindResource("lst") as Style;
-            Trace.WriteLine(style);
-
+            Labyrinth lab = new Labyrinth(hauteur, largeur, poidsMax) { };
+            ResultList = lab.Prim();
+            lst.ItemsSource = ResultList;
         }
     }
 }

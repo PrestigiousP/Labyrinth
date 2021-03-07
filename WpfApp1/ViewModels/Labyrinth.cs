@@ -15,12 +15,9 @@ namespace WpfApp1.ViewModels
         private int Largeur;
         private int Poids;
         public Node[,] NodeGraph { get; set; }
-        private Branch[,] Branches;
         public bool[,] Result { get; }
-        private int NbArete;
-        private int GrandeurReelle;
-        private int NbNodes;
         private dynamic[,] Graph;
+        public List<List<bool>> LabResult { get; set; }
 
         public Labyrinth(int hauteur, int largeur, int poids)
         {
@@ -148,7 +145,7 @@ namespace WpfApp1.ViewModels
                 }
                 // Trace.WriteLine(visitedNode.Count);
             }
-
+            // LabResult = 
             return ConvertToList(Result);
         }
 

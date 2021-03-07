@@ -31,21 +31,29 @@ namespace WpfApp1
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            hauteur = int.Parse(textBox.Text);
         }
 
         private void textBox1_TextChanged(object sender, TextChangedEventArgs e)
         {
-            largeur = int.Parse(textBox1.Text);
         }
 
         private void textBox2_TextChanged(object sender, TextChangedEventArgs e)
         {
-            poidsMax = int.Parse(textBox2.Text);
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                hauteur = int.Parse(textBox.Text);
+                largeur = int.Parse(textBox1.Text);
+                poidsMax = int.Parse(textBox2.Text);
+
+            }
+            catch
+            {
+                Invalid.Visibility = Visibility.Visible;
+            }
             Content = new Page1(hauteur, largeur, poidsMax);
         }
     }

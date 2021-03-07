@@ -67,14 +67,6 @@ namespace WpfApp1 {
         
         #line 14 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.TextBlock Invalid;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 15 "..\..\MainWindow.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button button;
         
         #line default
@@ -138,12 +130,9 @@ namespace WpfApp1 {
             #line hidden
             return;
             case 4:
-            this.Invalid = ((System.Windows.Controls.TextBlock)(target));
-            return;
-            case 5:
             this.button = ((System.Windows.Controls.Button)(target));
             
-            #line 15 "..\..\MainWindow.xaml"
+            #line 14 "..\..\MainWindow.xaml"
             this.button.Click += new System.Windows.RoutedEventHandler(this.button_Click);
             
             #line default
