@@ -119,13 +119,16 @@ namespace WpfApp1.ViewModels
 
                 });
 
-                // Évalue si la rangée de la branche.
+                // Évalue si c'est la rangée de la branche.
                 if (branch.Position[0] % 2 == 1)
                 {
                     //// Évalue si le noeud qui est relié à la branche est déjà choisi.
                     //if (!Graph[branch.Position[0] + direction, branch.Position[1]].Chosen)
                     //{
-                    visitedNode.Add(Graph[branch.Position[0] + 1, branch.Position[1]]);
+                    // visitedNode.Add(Graph[branch.Position[0] + 1, branch.Position[1]]);
+
+                    visitedNode.Add(Graph[branch.Position[0] + direction, branch.Position[1]]);
+
                     Graph[branch.Position[0] + direction, branch.Position[1]].Chosen = true;
                     branch.Chosen = true;
                     Result[branch.Position[0], branch.Position[1]] = true;
@@ -136,7 +139,7 @@ namespace WpfApp1.ViewModels
                 {
                     //if (!Graph[branch.Position[0], branch.Position[1] + direction].Chosen)
                     //{
-                    visitedNode.Add(Graph[branch.Position[0], branch.Position[1] + 1]);
+                    visitedNode.Add(Graph[branch.Position[0], branch.Position[1] + direction]);
                     Graph[branch.Position[0], branch.Position[1] + direction].Chosen = true;
                     branch.Chosen = true;
                     Result[branch.Position[0], branch.Position[1]] = true;
@@ -145,6 +148,15 @@ namespace WpfApp1.ViewModels
                 }
                 // Trace.WriteLine(visitedNode.Count);
             }
+
+            for (int i = 0; i < Hauteur + (Hauteur - 1); i++)
+            {
+                for (int j = 0; j < Largeur + (Largeur - 1); j++)
+                {
+
+                }
+            }
+
             // LabResult = 
             return ConvertToList(Result);
         }
@@ -155,8 +167,9 @@ namespace WpfApp1.ViewModels
             for (int i = 0; i < Hauteur + (Hauteur - 1); i++)
             {
                 List<bool> list = new List<bool>();
-                for (int j = 0; j < Hauteur + (Hauteur - 1); j++)
+                for (int j = 0; j < Largeur + (Largeur - 1); j++)
                 {
+
                     list.Add(result[i, j]);
                 }
                 lists.Add(list);

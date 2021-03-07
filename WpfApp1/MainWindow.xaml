@@ -6,12 +6,22 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="Labyrinthe" Height="450" Width="800"
-        ResizeMode="CanResize">
+        ResizeMode="CanResizeWithGrip">
     <Grid>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="195,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="textBox_TextChanged"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="195,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="textBox1_TextChanged"/>
-        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="195,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="textBox2_TextChanged"/>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="40,360,0,0" Click="button_Click"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="195,120,0,0" 
+                 TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="textBox_TextChanged"
+                 PreviewTextInput="NumberValidator"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="195,202,0,0" 
+                 TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="textBox1_TextChanged"
+                 PreviewTextInput="NumberValidator"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="195,274,0,0" 
+                 TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="textBox2_TextChanged"
+                 PreviewTextInput="NumberValidator"/>
+
+        <Button x:Name="button" Content="Générer" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="40,360,0,0" Click="button_Click"/>
+        <Label x:Name="label" Content="Hauteur&#xD;&#xA;" HorizontalAlignment="Left" Margin="113,120,0,0" VerticalAlignment="Top" Height="23" Width="77"/>
+        <Label x:Name="label1" Content="Largeur&#xD;&#xA;" HorizontalAlignment="Left" Margin="113,202,0,0" VerticalAlignment="Top" Height="29"/>
+        <Label x:Name="label2" Content="Poids maximal des arêtes&#xD;&#xA;" HorizontalAlignment="Left" Margin="40,274,0,0" VerticalAlignment="Top" Height="23"/>
 
     </Grid>
 </Window>
