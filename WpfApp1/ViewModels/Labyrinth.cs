@@ -146,18 +146,7 @@ namespace WpfApp1.ViewModels
                     Result[branch.Position[0], branch.Position[1] + direction] = true;
                     //}
                 }
-                // Trace.WriteLine(visitedNode.Count);
             }
-
-            for (int i = 0; i < Hauteur + (Hauteur - 1); i++)
-            {
-                for (int j = 0; j < Largeur + (Largeur - 1); j++)
-                {
-
-                }
-            }
-
-            // LabResult = 
             return ConvertToList(Result);
         }
 
